@@ -7,8 +7,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
+        /* Change the color of the navigation buttons */
         .swiper-button-next, .swiper-button-prev {
             color: #A6A061 !important;
+        }
+
+        /* Change the color of the pagination dots */
+        .swiper-pagination-bullet {
+            background-color: #A6A061 !important; /* Same color as navigation buttons */
+            opacity: 0.6; /* Slight transparency for better design */
+        }
+
+        /* Change the color of the active pagination dot */
+        .swiper-pagination-bullet-active {
+            background-color: #8D894F !important; /* Slightly darker for contrast */
+            opacity: 1;
         }
     </style>
 </head>
@@ -71,3 +84,4 @@
     </script>
 </body>
 </html>
+
