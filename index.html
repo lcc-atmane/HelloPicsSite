@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HelloPics - Photo Editing App</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="text-center bg-white p-6 rounded-lg shadow-lg max-w-lg">
@@ -17,10 +18,51 @@
         <!-- Description -->
         <p class="text-gray-600 mt-2">HelloPics is a powerful photo editing app with over 14 tools, including crop, clone, text, and image adjustments. Perfect for creating stunning visuals effortlessly.</p>
         
+        <!-- Image Slider -->
+        <div class="swiper mt-4">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="image1.png" class="w-full rounded-lg" alt="Screenshot 1"></div>
+                <div class="swiper-slide"><img src="image2.png" class="w-full rounded-lg" alt="Screenshot 2"></div>
+                <div class="swiper-slide"><img src="image3.png" class="w-full rounded-lg" alt="Screenshot 3"></div>
+                <div class="swiper-slide"><img src="image4.png" class="w-full rounded-lg" alt="Screenshot 4"></div>
+                <div class="swiper-slide"><img src="image5.png" class="w-full rounded-lg" alt="Screenshot 5"></div>
+                <div class="swiper-slide"><img src="image6.png" class="w-full rounded-lg" alt="Screenshot 6"></div>
+                <div class="swiper-slide"><img src="image7.png" class="w-full rounded-lg" alt="Screenshot 7"></div>
+                <div class="swiper-slide"><img src="image8.png" class="w-full rounded-lg" alt="Screenshot 8"></div>
+                <div class="swiper-slide"><img src="image9.png" class="w-full rounded-lg" alt="Screenshot 9"></div>
+                <div class="swiper-slide"><img src="image10.png" class="w-full rounded-lg" alt="Screenshot 10"></div>
+                <div class="swiper-slide"><img src="image11.png" class="w-full rounded-lg" alt="Screenshot 11"></div>
+            </div>
+            <!-- Pagination and Navigation -->
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        
         <!-- Google Play Button -->
         <a href="https://play.google.com/store/apps/details?id=your.app.id" target="_blank">
             <img src="googleplay.png" alt="Download on Google Play" class="mx-auto mt-4 w-40">
         </a>
     </div>
+    
+    <!-- Swiper.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
 </body>
 </html>
