@@ -7,28 +7,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-        /* Change the color of the navigation buttons */
+        /* Swiper Navigation Button Colors */
         .swiper-button-next, .swiper-button-prev {
             color: #A6A061 !important;
         }
 
-        /* Change the color of the pagination dots */
+        /* Pagination Dots Color */
         .swiper-pagination-bullet {
-            background-color: #A6A061 !important; /* Same color as navigation buttons */
-            opacity: 0.6; /* Slight transparency for better design */
+            background-color: #A6A061 !important;
+            opacity: 0.6;
         }
 
-        /* Change the color of the active pagination dot */
+        /* Active Pagination Dot Color */
         .swiper-pagination-bullet-active {
-            background-color: #8D894F !important; /* Slightly darker for contrast */
+            background-color: #8D894F !important;
             opacity: 1;
+        }
+
+        /* Privacy Policy Link Color */
+        .privacy-link {
+            color: #A6A061 !important;
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="text-center bg-white p-6 rounded-lg shadow-lg max-w-lg">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="text-center bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
         <!-- App Image -->
-        <img src="icon.png" alt="HelloPics App" class="mx-auto w-48 h-48 object-cover">
+        <img src="icon.png" alt="HelloPics App" class="mx-auto w-32 h-32 sm:w-48 sm:h-48 object-contain">
         
         <!-- Title -->
         <h1 class="text-2xl font-bold mt-4">HelloPics - Enhance Your Photos</h1>
@@ -37,19 +42,19 @@
         <p class="text-gray-600 mt-2">HelloPics is a powerful photo editing app with over 14 tools, including crop, clone, text, and image adjustments. Perfect for creating stunning visuals effortlessly.</p>
         
         <!-- Image Slider -->
-        <div class="swiper mt-4">
+        <div class="swiper mt-4 max-w-full">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="1.jpg" class="w-full rounded-lg" alt="Screenshot 1"></div>
-                <div class="swiper-slide"><img src="2.jpg" class="w-full rounded-lg" alt="Screenshot 2"></div>
-                <div class="swiper-slide"><img src="3.jpg" class="w-full rounded-lg" alt="Screenshot 3"></div>
-                <div class="swiper-slide"><img src="4.jpg" class="w-full rounded-lg" alt="Screenshot 4"></div>
-                <div class="swiper-slide"><img src="5.jpg" class="w-full rounded-lg" alt="Screenshot 5"></div>
-                <div class="swiper-slide"><img src="6.jpg" class="w-full rounded-lg" alt="Screenshot 6"></div>
-                <div class="swiper-slide"><img src="7.jpg" class="w-full rounded-lg" alt="Screenshot 7"></div>
-                <div class="swiper-slide"><img src="8.jpg" class="w-full rounded-lg" alt="Screenshot 8"></div>
-                <div class="swiper-slide"><img src="9.jpg" class="w-full rounded-lg" alt="Screenshot 9"></div>
-                <div class="swiper-slide"><img src="10.jpg" class="w-full rounded-lg" alt="Screenshot 10"></div>
-                <div class="swiper-slide"><img src="11.jpg" class="w-full rounded-lg" alt="Screenshot 11"></div>
+                <div class="swiper-slide"><img src="1.jpg" class="w-full rounded-lg object-contain" alt="Screenshot 1"></div>
+                <div class="swiper-slide"><img src="2.jpg" class="w-full rounded-lg object-contain" alt="Screenshot 2"></div>
+                <div class="swiper-slide"><img src="3.jpg" class="w-full rounded-lg object-contain" alt="Screenshot 3"></div>
+                <div class="swiper-slide"><img src="4.jpg" class="w-full rounded-lg object-contain" alt="Screenshot 4"></div>
+                <div class="swiper-slide"><img src="5.jpg" class="w-full rounded-lg object-contain" alt="Screenshot 5"></div>
+                <div class="swiper-slide"><img src="6.jpg" class="w-full rounded-lg object-contain" alt="Screenshot 6"></div>
+                <div class="swiper-slide"><img src="7.jpg" class="w-full rounded-lg object-contain" alt="Screenshot 7"></div>
+                <div class="swiper-slide"><img src="8.jpg" class="w-full rounded-lg object-contain" alt="Screenshot 8"></div>
+                <div class="swiper-slide"><img src="9.jpg" class="w-full rounded-lg object-contain" alt="Screenshot 9"></div>
+                <div class="swiper-slide"><img src="10.jpg" class="w-full rounded-lg object-contain" alt="Screenshot 10"></div>
+                <div class="swiper-slide"><img src="11.jpg" class="w-full rounded-lg object-contain" alt="Screenshot 11"></div>
             </div>
             <!-- Pagination and Navigation -->
             <div class="swiper-pagination"></div>
@@ -63,7 +68,7 @@
         </a>
 
         <!-- Privacy Policy Link -->
-        <a href="Privacy-Policy.html" class="text-blue-600 underline mt-4 block">Privacy Policy</a>
+        <a href="Privacy-Policy.html" class="privacy-link underline mt-4 block">Privacy Policy</a>
     </div>
     
     <!-- Swiper.js Script -->
