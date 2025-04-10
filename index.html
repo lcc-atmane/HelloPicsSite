@@ -15,29 +15,20 @@
     <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
 
     <style>
-        /* Swiper Navigation Button Colors */
         .swiper-button-next, .swiper-button-prev {
             color: #A6A061 !important;
         }
-
-        /* Pagination Dots Color */
         .swiper-pagination-bullet {
             background-color: #A6A061 !important;
             opacity: 0.6;
         }
-
-        /* Active Pagination Dot Color */
         .swiper-pagination-bullet-active {
             background-color: #8D894F !important;
             opacity: 1;
         }
-
-        /* Privacy Policy Link Color */
         .privacy-link {
             color: #A6A061 !important;
         }
-
-        /* Ensure images fit on small screens */
         .swiper-slide img {
             width: 100%;
             height: auto;
@@ -79,12 +70,13 @@
             <div class="swiper-button-prev"></div>
         </div>
 
-       <!-- Download Button -->
-<a href="https://github.com/lcc-atmane/HelloPics/releases/download/V1.0/HelloPics.apk" download>
-  <button style="background-color: #A6A061;" class="hover:brightness-90 text-white font-bold py-2 px-4 rounded mx-auto mt-4 block">
-    Download
-  </button>
-</a>
+        <!-- Download Button + Count -->
+        <a id="downloadLink" href="https://github.com/Lcc-atmane/HelloPics/releases/download/V1.0/HelloPics.apk" download>
+            <button style="background-color: #A6A061;" class="hover:brightness-90 text-white font-bold py-2 px-4 rounded mx-auto mt-4 block">
+                Download
+            </button>
+        </a>
+        <p id="downloadCount" class="text-sm text-gray-600 mt-2">Loading downloads...</p>
 
         <!-- Privacy Policy Link -->
         <a href="Privacy-Policy.html" class="privacy-link underline mt-4 block">Privacy Policy</a>
@@ -92,7 +84,10 @@
 
     <!-- Swiper.js Script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Custom Script -->
     <script>
+        // Initialize Swiper
         const swiper = new Swiper('.swiper', {
             loop: true,
             pagination: {
@@ -108,6 +103,26 @@
                 disableOnInteraction: false,
             },
         });
+
+        // Fetch GitHub download count
+        fetch('https://api.github.com/repos/Lcc-atmane/HelloPics/releases')
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0 && data[0].assets.length > 0) {
+                    const asset = data[0].assets.find(a => a.name === "HelloPics.apk");
+                    if (asset) {
+                        document.getElementById('downloadCount').textContent = `${asset.download_count} downloads`;
+                    } else {
+                        document.getElementById('downloadCount').textContent = "Download count not found";
+                    }
+                } else {
+                    document.getElementById('downloadCount').textContent = "No release data";
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById('downloadCount').textContent = "Couldn't load download count";
+            });
     </script>
 </body>
 </html>
